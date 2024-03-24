@@ -32,7 +32,10 @@ function Header({ chooseTextLanguage, currentTheme }) {
             className="header"
         >
             <h1 className="primary-heading">
-                Welcome to the University of Baghdad
+                {chooseTextLanguage(
+                    "Welcome to Ibn-Al-Haytham college",
+                    "مرحبا بكم في كلية ابن الهيثم"
+                )}
             </h1>
             <p className="header-content">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
@@ -69,7 +72,7 @@ function Header({ chooseTextLanguage, currentTheme }) {
                 <Canvas>
                     <Stars
                         radius={50}
-                        count={2500}
+                        count={2000}
                         factor={4}
                         saturation={0}
                         fade

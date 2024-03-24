@@ -7,6 +7,7 @@ import Apply from "./routes/Apply";
 import Research from "./routes/Research";
 import Departments from "./routes/Departments";
 import NotFound from "./routes/NotFound";
+import Gallery from "./components/Gallery";
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
@@ -103,6 +104,7 @@ function App() {
                         />
                     }
                 />
+                <Route path="/gallery" element={<Gallery />} />
                 <Route path="/404" element={<NotFound language={language} />} />
                 <Route path="*" element={<Navigate to="/404" />} />
             </Routes>

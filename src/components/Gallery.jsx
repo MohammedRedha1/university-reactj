@@ -1,36 +1,88 @@
-const imagesStructure = [
-    // this shit is just a placeholder, and it can
-    {
-        src: "https://via.placeholder.com/150",
-        alt: "placeholder",
-        caption: "Placeholder",
-    },
-    {
-        src: "https://via.placeholder.com/150",
-        alt: "placeholder",
-        caption: "Placeholder",
-    },
-    {
-        src: "https://via.placeholder.com/150",
-        alt: "placeholder",
-        caption: "Placeholder",
-    },
-];
-
-function Gallery({ images }) {
+function Gallery() {
+    const imagesStructure = [
+        // this shit is just a placeholder, and it can
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+        {
+            src: "https://via.placeholder.com/500",
+            alt: "placeholder",
+        },
+    ];
     return (
-        <div className="gallery">
-            {images.map((image) => {
+        <main className="gallery">
+            {imagesStructure.map((image) => {
                 return (
                     <img
-                        className="fade-in gallery-img"
+                        className="gallery-img"
                         key={Math.random()}
                         src={image.src}
                         alt={image.alt}
                     />
                 );
             })}
-        </div>
+        </main>
     );
 }
 

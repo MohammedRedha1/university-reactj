@@ -595,7 +595,7 @@ export const applyForm = {
         {
             id: "gpa",
             label: {
-                en: "GPA(% out of 100%)",
+                en: "GPA",
                 ar: "المعدل",
             },
             type: "text",

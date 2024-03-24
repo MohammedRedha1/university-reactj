@@ -78,7 +78,7 @@ export default function Navbar({
                 <CustomLink to="/research" language={language}>
                     {chooseTextLanguage("Research", "البحث العلمي")}
                 </CustomLink>
-                <CustomLink to="/campus" language={language}>
+                <CustomLink to="/gallery" language={language}>
                     {chooseTextLanguage("Gallery", "الصور")}
                 </CustomLink>
                 {className == "navbar" && (
