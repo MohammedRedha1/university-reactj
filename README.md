@@ -6,7 +6,7 @@
 
 ## Run the App
 - Make sure that `node` is installed on your machine. [Download node](https://nodejs.org/en/download/current).
-- Navigate to the project's directory and run the following command in your terminal for the first time
+- Navigate to the project's directory and run the following command in your terminal only for the first time
 ```
 npm i
 ```
