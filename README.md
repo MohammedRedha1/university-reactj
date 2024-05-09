@@ -5,7 +5,8 @@
 4. `nodejs` as a runtime environment for JavaScript. 
 
 ## Run the App
-Navigate to the project's directory and run the following command in your terminal for only once
+- Make sure that `node` is installed on your machine. [Download node](https://nodejs.org/en/download/current).
+- Navigate to the project's directory and run the following command in your terminal for only once
 ```
 npm i
 ```
