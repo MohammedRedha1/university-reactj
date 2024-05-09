@@ -5,8 +5,8 @@ function Header({ chooseTextLanguage, currentTheme }) {
         <header className="header">
             <h1 className="primary-heading">
                 {chooseTextLanguage(
-                    "Welcome to Ibn-Al-Haytham college",
-                    "مرحبا بكم في كلية ابن الهيثم"
+                    "Welcome to The university of Baghdad",
+                    "مرحبا بكم في جامعة بغداد"
                 )}
             </h1>
             <p className="header-content">
