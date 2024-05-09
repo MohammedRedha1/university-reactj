@@ -10,6 +10,7 @@ export default function Navbar({
     currentTheme,
     setCurrentTheme,
     optionalStyle,
+    isAnimated,
 }) {
     const { scrollY } = useScroll();
     const [hidden, setHidden] = useState(false);
@@ -35,7 +36,7 @@ export default function Navbar({
     return (
         <motion.nav
             variants={{ visible: { y: 0 }, hidden: { y: "-100%" } }}
-            animate={hidden ? "hidden" : "visible"}
+            animate={isAnimated ? (hidden ? "hidden" : "visible") : null}
             transition={{ type: "tween", duration: 0.35, ease: "easeInOut" }}
             className={className}
         >
@@ -59,8 +60,16 @@ export default function Navbar({
                             htmlFor="dark-mode-toggle"
                             className="dark-mode-toggle-label"
                         >
-                            <img src="../assets/images/moon-solid.svg" alt="" />
-                            <img src="../assets/images/sun-solid.svg" alt="" />
+                            <img
+                                style={{ pointerEvents: "none" }}
+                                src="../assets/images/moon-solid.svg"
+                                alt=""
+                            />
+                            <img
+                                style={{ pointerEvents: "none" }}
+                                src="../assets/images/sun-solid.svg"
+                                alt=""
+                            />
                         </label>
                     </div>
                 </>
@@ -75,9 +84,7 @@ export default function Navbar({
                 <CustomLink to="/departments" language={language}>
                     {chooseTextLanguage("Departments", "الأقسام")}
                 </CustomLink>
-                <CustomLink to="/research" language={language}>
-                    {chooseTextLanguage("Research", "البحث العلمي")}
-                </CustomLink>
+
                 <CustomLink to="/gallery" language={language}>
                     {chooseTextLanguage("Gallery", "الصور")}
                 </CustomLink>
@@ -135,6 +142,7 @@ export function CustomLink({ to, children, language, ...props }) {
     // });
     return (
         <motion.li
+            data-aos={props.dataAos || null}
             whileTap={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className={(isActive ? "active " : "") + "nav-link fade-in"}

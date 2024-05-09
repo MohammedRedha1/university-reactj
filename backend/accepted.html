@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="module" src="management.js"></script>
+        <link rel="stylesheet" href="style.css" />
+        <title>Admin Page</title>
+    </head>
+    <body id="accepted">
+        <nav class="main-nav">
+            <nav class="main-nav">
+                <a href="./pending.html">Pending applications</a>
+
+                <a class="active" href="./accepted.html"
+                    >Accepted applications</a
+                >
+
+                <a href="./rejected.html">Rejected applications</a>
+            </nav>
+        </nav>
+        <div id="content">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Exam ID</th>
+                        <th>Phone number</th>
+                        <th>GPA</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody id="data-table-body"></tbody>
+            </table>
+        </div>
+    </body>
+</html>

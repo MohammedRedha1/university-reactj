@@ -1,0 +1,117 @@
+:root {
+    --primary: hsl(230, 65%, 40%);
+    --primary-content: hsl(229, 65%, 90%);
+    --primary-dark: hsl(230, 64%, 30%);
+    --primary-light: hsl(230, 65%, 50%);
+
+    --secondary: hsl(50, 65%, 40%);
+    --secondary-content: hsl(0, 0%, 0%);
+    --secondary-dark: hsl(50, 64%, 30%);
+    --secondary-light: hsl(50, 65%, 50%);
+
+    --background: hsl(233, 18%, 10%);
+    --foreground: hsl(231, 17%, 15%);
+    --border: hsl(232, 17%, 25%);
+
+    --copy: hsl(240, 14%, 99%);
+    --copy-light: hsl(231, 17%, 85%);
+    --copy-lighter: hsl(230, 17%, 65%);
+
+    --success: hsl(120, 65%, 40%);
+    --warning: hsl(60, 65%, 40%);
+    --error: hsl(0, 65%, 40%);
+    --success-content: hsl(120, 65%, 90%);
+    --warning-content: hsl(0, 0%, 0%);
+    --error-content: hsl(0, 65%, 90%);
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: "Inter";
+    min-height: 100vh;
+    background-color: var(--background);
+    color: var(--copy);
+    font-size: 20px;
+    padding-inline: 4rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.data-table {
+    width: clamp(500px, 100%, 1000px);
+    margin: 25px 0;
+    tr {
+        background-color: var(--foreground);
+    }
+    td,
+    th {
+        padding: 10px 15px;
+    }
+    th {
+        background-color: var(--primary);
+        color: var(--primary-content);
+    }
+    .actions {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        justify-content: space-around;
+        button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: filter 0.1s;
+            &:hover {
+                filter: brightness(0.9);
+            }
+        }
+        .accept {
+            background-color: var(--success);
+            color: var(--success-content);
+        }
+        .reject {
+            background-color: var(--error);
+            color: var(--error-content);
+        }
+    }
+}
+
+.main-nav {
+    background-color: var(--primary-content);
+    font-weight: 600;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    a:is(:link, :visited):not(.active) {
+        color: var(--primary);
+        text-decoration: none;
+        padding: 10px 15px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .active:is(:link, :visited) {
+        padding: 10px 15px;
+        color: var(--primary);
+        text-decoration: underline;
+    }
+}
+
+#content {
+    transition: opacity 0.5s;
+}
+
+#content.hx-swapping {
+    opacity: 0;
+}

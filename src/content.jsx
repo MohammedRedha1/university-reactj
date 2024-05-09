@@ -123,7 +123,7 @@ export const tabs = [
     },
     {
         tabId: "courses",
-        en: "Courses",
+        en: "Curriculum",
         ar: "المقررات الدراسية",
     },
     {
@@ -608,13 +608,6 @@ export const applyForm = {
     },
 };
 
-export const galleryImages = [
-    {
-        src: "src",
-        alt: "alt",
-    },
-];
-
 export const aboutTabs = [
     {
         id: "historical",
@@ -643,5 +636,44 @@ export const aboutTabs = [
             en: "Vision, mission, objectives",
             ar: "الرؤية والرسالة والاهداف",
         },
+    },
+];
+
+export const galleryImages = [
+    {
+        src: "../assets/images/gallery/1.webp",
+        alt: "alt",
+    },
+    {
+        src: "../assets/images/gallery/2.webp",
+        alt: "alt",
+    },
+    {
+        src: "../assets/images/gallery/3.webp",
+        alt: "alt",
+    },
+    {
+        src: "../assets/images/gallery/4.webp",
+        alt: "alt",
+    },
+    {
+        src: "../assets/images/gallery/5.webp",
+        alt: "alt",
+    },
+    {
+        src: "../assets/images/gallery/6.webp",
+        alt: "alt",
+    },
+    {
+        src: "../assets/images/gallery/7.webp",
+        alt: "alt",
+    },
+    {
+        src: "../assets/images/gallery/8.webp",
+        alt: "alt",
+    },
+    {
+        src: "../assets/images/gallery/9.webp",
+        alt: "alt",
     },
 ];

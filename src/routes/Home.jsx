@@ -4,15 +4,22 @@ import News from "../components/News";
 import Header from "../components/Header.jsx";
 import Animated from "../components/Animated.jsx";
 import Footer from "../components/Footer.jsx";
-// const lenis = new Lenis();
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-// function raf(time) {
-//     lenis.raf(time);
-//     requestAnimationFrame(raf);
-// }
+AOS.init();
 
 // requestAnimationFrame(raf);
 function Home({ language, chooseTextLanguage, currentTheme }) {
+    const animations = new Array(
+        "flip-left",
+        "flip-right",
+        "flip-up",
+        "flip-down"
+    );
+    function randomIndex() {
+        return Math.floor(Math.random() * animations.length);
+    }
     return (
         <Animated>
             <Header
@@ -28,6 +35,7 @@ function Home({ language, chooseTextLanguage, currentTheme }) {
                     {departments.map((department, index) => {
                         return (
                             <DepartmentCard
+                                dataAos={animations[randomIndex()]}
                                 key={index}
                                 {...department[language]}
                                 iconSrc={department.iconSrc[currentTheme]}
@@ -45,6 +53,9 @@ function Home({ language, chooseTextLanguage, currentTheme }) {
                 {news.map((newsItem, index) => {
                     return (
                         <News
+                            dataAos={
+                                index % 2 === 0 ? "fade-right" : "fade-left"
+                            }
                             key={index}
                             {...newsItem[language]}
                             chooseTextLanguage={chooseTextLanguage}
@@ -52,7 +63,10 @@ function Home({ language, chooseTextLanguage, currentTheme }) {
                     );
                 })}
             </section>
-            <Footer chooseTextLanguage={chooseTextLanguage} />
+            <Footer
+                chooseTextLanguage={chooseTextLanguage}
+                currentTheme={currentTheme}
+            />
         </Animated>
     );
 }

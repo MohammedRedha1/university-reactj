@@ -1,8 +1,15 @@
 // import "../../public/styles/news.min.css";
 
-function News({ imageSrc, dep, heading, content, chooseTextLanguage }) {
+function News({
+    imageSrc,
+    dep,
+    heading,
+    content,
+    chooseTextLanguage,
+    dataAos,
+}) {
     return (
-        <div className="news-card">
+        <div className="news-card" data-aos={dataAos}>
             <div className="news-text-box">
                 <span className="news-department fade-in" key={Math.random()}>
                     {dep}

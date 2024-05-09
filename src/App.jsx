@@ -4,10 +4,9 @@ import Navbar from "./components/NavBar";
 import Home from "./routes/Home";
 import About from "./routes/About";
 import Apply from "./routes/Apply";
-import Research from "./routes/Research";
 import Departments from "./routes/Departments";
 import NotFound from "./routes/NotFound";
-import Gallery from "./components/Gallery";
+import Gallery from "./routes/Gallery";
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
@@ -67,6 +66,7 @@ function App() {
                 className="navbar"
                 currentTheme={currentTheme}
                 setCurrentTheme={setCurrentTheme}
+                isAnimated={true}
             />
 
             <Routes>
@@ -80,7 +80,15 @@ function App() {
                         />
                     }
                 />
-                <Route path="/apply" element={<Apply language={language} />} />
+                <Route
+                    path="/apply"
+                    element={
+                        <Apply
+                            language={language}
+                            chooseTextLanguage={chooseTextLanguage}
+                        />
+                    }
+                />
                 <Route
                     path="/about"
                     element={
@@ -90,7 +98,6 @@ function App() {
                         />
                     }
                 />
-                <Route path="/research" element={<Research />} />
                 <Route
                     path="/departments"
                     element={<Navigate to="/departments/biology" replace />}
@@ -104,7 +111,15 @@ function App() {
                         />
                     }
                 />
-                <Route path="/gallery" element={<Gallery />} />
+                <Route
+                    path="/gallery"
+                    element={
+                        <Gallery
+                            language={language}
+                            chooseTextLanguage={chooseTextLanguage}
+                        />
+                    }
+                />
                 <Route path="/404" element={<NotFound language={language} />} />
                 <Route path="*" element={<Navigate to="/404" />} />
             </Routes>

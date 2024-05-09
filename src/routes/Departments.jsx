@@ -4,7 +4,6 @@ import Animated from "../components/Animated";
 import { courses, departments, tabs, tabsContent } from "../content.jsx";
 import { motion } from "framer-motion";
 import Courses from "../components/Courses.jsx";
-import Footer from "../components/Footer.jsx";
 function Departments({ language, chooseTextLanguage }) {
     const depsIndices = {
         biology: 1,
@@ -120,7 +119,6 @@ function Departments({ language, chooseTextLanguage }) {
                         />
                     )}
                 </motion.div>
-                <Footer chooseTextLanguage={chooseTextLanguage} />
             </main>
         </Animated>
     );

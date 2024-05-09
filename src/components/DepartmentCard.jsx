@@ -1,7 +1,14 @@
 // import "../../public/styles/department.min.css";
 import { CustomLink } from "../components/NavBar";
 import { useMatch, useResolvedPath } from "react-router-dom";
-function DepartmentCard({ heading, iconSrc, content, to, currentDepartment }) {
+function DepartmentCard({
+    heading,
+    iconSrc,
+    content,
+    to,
+    currentDepartment,
+    dataAos,
+}) {
     const resolvedPath = useResolvedPath(to);
     const isActive = useMatch({ path: resolvedPath.pathname, end: true });
     return (
@@ -10,6 +17,7 @@ function DepartmentCard({ heading, iconSrc, content, to, currentDepartment }) {
             isActive={isActive}
             className="department-card"
             currentDepartment={currentDepartment}
+            dataAos={dataAos}
         >
             <div className="department-img-box">
                 <img src={iconSrc} alt="icon" />

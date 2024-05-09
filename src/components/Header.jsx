@@ -1,36 +1,8 @@
 // import "../../public/styles/header.min.css";
-import {
-    motion,
-    useMotionTemplate,
-    useMotionValue,
-    animate,
-} from "framer-motion";
-import { Canvas } from "@react-three/fiber";
-import { Stars } from "@react-three/drei";
-import { useEffect } from "react";
+
 function Header({ chooseTextLanguage, currentTheme }) {
-    const COLORS = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
-    const color = useMotionValue(COLORS[0]);
-    const bgColor = currentTheme === "dark" ? "#060916" : "#d1ecfa";
-    const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, ${bgColor} 50%, ${color})`;
-    const border = useMotionTemplate`1px solid ${color}`;
-    const boxShadow = useMotionTemplate`0 4px 44px ${color}`;
-    useEffect(() => {
-        animate(color, COLORS, {
-            ease: "easeInOut",
-            duration: 10,
-            repeat: Infinity,
-            repeatType: "mirror",
-        });
-    }, []);
     return (
-        <motion.header
-            style={{
-                backgroundImage,
-                // marginTop: "-80px",
-            }}
-            className="header"
-        >
+        <header className="header">
             <h1 className="primary-heading">
                 {chooseTextLanguage(
                     "Welcome to Ibn-Al-Haytham college",
@@ -45,11 +17,7 @@ function Header({ chooseTextLanguage, currentTheme }) {
                 Placeat, dolor quibusdam! Placeat labore provident eius
                 accusamus ad error dolorem beatae, aliquid officiis autem.
             </p>
-            <motion.form
-                style={{ border, boxShadow }}
-                className="header-form"
-                action=""
-            >
+            <form className="header-form" action="">
                 <img src="../assets/images/search.svg" alt="" />
                 <input
                     className="fade-in"
@@ -57,8 +25,7 @@ function Header({ chooseTextLanguage, currentTheme }) {
                     type="text"
                     placeholder={chooseTextLanguage("Search", "بحث")}
                 />
-                <motion.button
-                    style={{ backgroundColor: color, boxShadow }}
+                <button
                     className="fade-in"
                     onClick={(e) => {
                         e.preventDefault();
@@ -66,20 +33,9 @@ function Header({ chooseTextLanguage, currentTheme }) {
                     key={Math.random()}
                 >
                     {chooseTextLanguage("Search", "بحث")}
-                </motion.button>
-            </motion.form>
-            <div style={{ position: "absolute", inset: "0", zIndex: "0" }}>
-                <Canvas>
-                    <Stars
-                        radius={50}
-                        count={2000}
-                        factor={4}
-                        saturation={0}
-                        fade
-                    />
-                </Canvas>
-            </div>
-        </motion.header>
+                </button>
+            </form>
+        </header>
     );
 }
 
