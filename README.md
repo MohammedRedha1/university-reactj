@@ -1,7 +1,7 @@
 ## The stack (MERN)
-1. `Reactjs` alongside `Vite` to handle the frontend.
-2. `MongoDb` as a database.
-3. `Expressjs` to build the API.
+1. `MongoDb` as a database.
+2. `Expressjs` to build the API.
+3. `Reactjs` alongside `Vite` to handle the frontend.
 4. `nodejs` as a runtime environment for JavaScript. 
 
 ## Run the App
