@@ -18,3 +18,6 @@ npm run dev & cd backend && node server.js
 ## NOTE
 I did not follow best practices in so many parts in this app, I just wanted to finish it quickly since it was just a college project and was never going into prodution.
 - for example, I run the admin page on the same port as the frontend, and to make things even worse, there is no user authintication involved in the process, hence it's a joke when it comes to security.
+
+## One final thing
+For the love of god, please don't use JavaScript on the server like I did
